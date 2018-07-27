@@ -60,6 +60,7 @@ class InteractiveRecord
 
   def self.find_by(hash)
     sql = "SELECT * FROM #{self.table_name} WHERE #{hash.keys.flatten[0].to_s} = #{hash.values.flatten[0].to_s}"
+    binding.pry
     DB[:conn].execute(sql)
     binding.pry
   end
